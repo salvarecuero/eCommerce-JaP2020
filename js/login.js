@@ -40,4 +40,12 @@ function renderButton() {
       'theme': 'dark',
       'onsuccess': onSignIn,
     });
-};
+
+    const target = document.getElementById('my-signin2');
+    const observer = new MutationObserver(translateButton);
+    observer.observe(target, { childList: true });
+}
+
+function translateButton() {
+    document.querySelector('#my-signin2 span > span').innerHTML = 'Iniciar sesión con Google';
+}

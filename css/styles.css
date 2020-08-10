@@ -144,3 +144,16 @@ a.custom-card:hover {
 .dropdown:hover>.dropdown-menu {
   display: block;
 }
+
+#dropdownMenuLink {
+  display: flex;
+  align-items: center;
+}
+
+#dropdownMenuLink * {
+  margin: 0 5px;
+}
+
+.dropdown-toggle::after {
+  margin-left: .5em;
+}

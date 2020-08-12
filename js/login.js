@@ -16,7 +16,7 @@ function checkDatos(event){
     }else{
         localStorage.setItem('correo', correo);
         localStorage.setItem("logged", true);
-        window.location.replace("index.html");
+        window.location = "index.html";
     }
 };
 
@@ -28,7 +28,7 @@ function showError(){
 function onSignIn(){
     localStorage.removeItem("correo");
     localStorage.setItem("logged", true);
-    window.location.replace("index.html");
+    window.location = "index.html";
 };
 
 function renderButton() {

@@ -157,3 +157,7 @@ a.custom-card:hover {
 .dropdown-toggle::after {
   margin-left: .5em;
 }
+
+.dropdown-menu{
+  margin: 0;
+}

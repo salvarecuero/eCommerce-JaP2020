@@ -161,3 +161,11 @@ a.custom-card:hover {
 .dropdown-menu{
   margin: 0;
 }
+
+.flippedIcon{
+  transform: scaleY(-1);
+}
+
+.fas{
+  transition: 200ms;
+}

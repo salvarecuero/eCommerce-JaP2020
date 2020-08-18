@@ -23,9 +23,46 @@
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
       </div>
     </nav>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col text-right">
+            <div class="btn-group btn-group-toggle mb-1" data-toggle="buttons">
+                <label class="btn btn-light" id="sortByCost" >
+                    <input type="radio" name="options" autocomplete="off"><i class="flippedIcon fas fa-sort-amount-down mr-1"></i>Precio
+                </label>
+                <label class="btn btn-light" id="sortBySoldCount" >
+                    <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Relevancia
+                </label>
+            </div>
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-md-6"></div>
+          <div class="col-md-6 col-sm-12 mb-1 container">
+            <div class="row container p-0 m-0">
+              <div class="col">
+                <p class="font-weight-normal text-right my-2">Precio</p>
+              </div>
+              <div class="col">
+                <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+              </div>
+              <div class="col">
+                <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+              </div>
+              <div class="col-3 p-0">
+                <div class="btn-group" role="group">
+                  <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
+                  <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
     <div class="container">
       <div class="row">
-          <div class="list-group m-4" id="cat-list-container">                  
+          <div class="list-group" id="cat-list-container">                  
           </div>
       </div>
   </div>

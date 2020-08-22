@@ -7,6 +7,8 @@
     <meta name="description" content="">
     <title>eMercado - Todo lo que busques está aquí</title>
 
+    <script src="js/loggedCheck.js" onload=mustBeLogged()></script>
+
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -15,14 +17,18 @@
   </head>
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
-      <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
+      <div id="menu" class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2 d-none d-md-inline-block" href="/">Inicio</a>
         <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
       </div>
     </nav>
+    <div class="text-center pt-4">
+      <h2>Productos</h2>
+      <p class="lead">Verás aquí todos los productos del sitio.</p>
+    </div>
     <div class="container mt-4">
       <div class="row">
         <div class="col text-right">
@@ -37,7 +43,18 @@
         </div>
       </div>
       <div class="row justify-content-end">
-        <div class="col-md-6"></div>
+        <div class="col-md-6 col-sm-12 mb-1 container">
+          <form class="form-inline" onSubmit="return false">
+            <div class="form-group">
+              <div class="input-group">
+                <input type="search" id="search" class="form-control sm-3" placeholder="Buscar" autocomplete="off">
+                <span id="searchIcon" class="input-group-append">
+                  <div class="input-group-text bg-transparent"><i class="fa fa-search"></i></div>
+                </span>
+              </div>
+            </div>
+          </form>
+        </div>
           <div class="col-md-6 col-sm-12 mb-1 container">
             <div class="row container p-0 m-0">
               <div class="col">
@@ -61,7 +78,7 @@
     </div>
 
     <div class="container">
-      <div class="row">
+      <div class="row justify-content-center">
           <div class="list-group" id="cat-list-container">                  
           </div>
       </div>
@@ -81,5 +98,7 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
     <script src="js/products.js"></script>
+    <script src="https://apis.google.com/js/platform.js?onload=initAuth" async defer></script>
+    <script src="js/initAuth.js" async defer></script>
   </body>
 </html>

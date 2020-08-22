@@ -33,7 +33,7 @@
   </head>
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
-        <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <div id="menu" class="container d-flex flex-column flex-md-row justify-content-between">
             <a class="py-2 d-none d-md-inline-block" href="./">Inicio</a>
             <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
             <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
@@ -219,5 +219,7 @@
       <script src="js/dropzone.js"></script>
       <script src="js/init.js"></script>
       <script src="js/sell.js"></script>
+      <script src="https://apis.google.com/js/platform.js?onload=initAuth" async defer></script>
+      <script src="js/initAuth.js" async defer></script>
     </body>
 </html>

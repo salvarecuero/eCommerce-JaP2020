@@ -27,7 +27,7 @@ function createButton(nombre, img){
     let btnMenu = `
     <div id="userMenu" class="dropdown show">
         <a class="btn dropdown-toggle" style="color: white;" href="" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <img src="${img}" height="25px" style="display: inline-inblock;"> ${nombre}
+        <img id="profilePic" src="${img}" height="25px" style="display: inline-inblock;"> <span id="profileName">${nombre}</span>
         </a>
             
         <div class="dropdown-menu" style="width: 100%; text-align: center;" aria-labelledby="dropdownMenuLink">

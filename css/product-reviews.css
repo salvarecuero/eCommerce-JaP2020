@@ -1,0 +1,98 @@
+.reviews {
+    color: #313437;
+    background-color: #f0eeee;
+}
+  
+.reviews p {
+    color: #7d8285;
+}
+
+.reviews .people {
+    padding: 50px 0 20px;
+}
+  
+.reviews .item {
+    margin-bottom: 32px;
+    margin-top: 10px;
+}
+  
+@media (min-width:768px) {
+    .reviews .item {
+      height: 220px;
+    }
+}
+  
+.reviews .item .box {
+    padding: 30px;
+    background-color: #fff;
+    position: relative;
+}
+
+#spike {
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    position: absolute;
+    border: solid 1px black;
+    transform: rotate(90deg);
+}
+  
+
+.reviews .item .box:after {
+    content: '';
+    width: 25px;
+	height: 25px;
+	background: white;
+	position: absolute;
+	transform: rotate(45deg);
+	bottom: -13px;
+	left: 32px;
+	border-top: none !important;
+	border-left: none !important;
+}
+
+.reviews .item .box.border-success:after {
+    border: 1px solid #28a745;
+}
+  
+.reviews .item .author {
+    margin-top: 28px;
+    padding-left: 25px;
+}
+  
+.reviews .item .name {
+    font-weight: bold;
+    margin-bottom: 2px;
+    color: inherit;
+}
+  
+.reviews .item .date {
+    font-size: 13px;
+    color: #9ca0a1;
+}
+  
+.reviews .item .description {
+    font-size: 15px;
+    margin-bottom: 0;
+}
+  
+.reviews .item img {
+    max-width: 40px;
+    float: left;
+    margin-right: 12px;
+    margin-top: -5px;
+}
+
+#userReviewStars{
+    line-height: 0px;
+    cursor: pointer;
+}
+
+#userReviewStars:hover, #userReviewStars.checked{
+    color: orange;
+}
+
+.star-rating:hover ~ .star-rating, #userReviewStars:not(:hover) .star-rating.checked ~ .star-rating{
+    color: #313437 !important;
+}
+

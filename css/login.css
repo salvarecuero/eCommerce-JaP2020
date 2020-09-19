@@ -18,3 +18,14 @@ body {
   padding : 15px; 
   margin : auto;
 }
+
+#github-button {
+  background-color: #444444;
+  border-color: #444444;
+}
+
+#github-button:hover{
+  cursor: pointer;
+  background-color: #3d3d3d;
+  border-color: #3d3d3d;
+}

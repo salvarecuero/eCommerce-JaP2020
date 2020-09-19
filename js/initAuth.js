@@ -4,21 +4,23 @@ function initAuth() {
             client_id: '213419820394-uvd8bancrgor4shmd9dqjupsni82kvt7.apps.googleusercontent.com',
         });
 
-        auth2.then(() => {
-            const profile = auth2.currentUser.get().getBasicProfile();
-            if (profile) {
-                localStorage.removeItem("correo");
-                var nombre = profile.getGivenName();
-                var img = profile.getImageUrl();
-                var toAdd = createButton(nombre, img);
-                const menu = document.getElementById("menu");
-                menu.innerHTML += toAdd;
-            }else if(localStorage.getItem('correo')){
-                var toAdd = createButton(localStorage.getItem('correo'), "img/defaultUserImg.svg");
-                const menu = document.getElementById("menu");
-                menu.innerHTML += toAdd;
-            }
-        });
+        auth2
+            .then(() => {
+                const profile = auth2.currentUser.get().getBasicProfile();
+                if (profile) {
+                    localStorage.removeItem("correo");
+                    var nombre = profile.getGivenName();
+                    var img = profile.getImageUrl();
+                    var toAdd = createButton(nombre, img);
+                    const menu = document.getElementById("menu");
+                    menu.innerHTML += toAdd;
+                }else if(localStorage.getItem('correo')){
+                    var toAdd = createButton(localStorage.getItem('correo'), "img/defaultUserImg.svg");
+                    const menu = document.getElementById("menu");
+                    menu.innerHTML += toAdd;
+                }else throw Error();
+            })
+            .catch(() => logOut());
         window.auth2 = auth2;
     });
 };
@@ -30,8 +32,10 @@ function createButton(nombre, img){
         <img id="profilePic" src="${img}" height="25px" style="display: inline-inblock;"> <span id="profileName">${nombre}</span>
         </a>
             
-        <div class="dropdown-menu" style="width: 100%; text-align: center;" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="#" onClick="logOut()">Cerrar sesión</a>
+        <div class="dropdown-menu" style="width: 100%;" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="my-profile.html"><i class="fa fa-user"></i> Mi perfil</a>
+            <a class="dropdown-item" href="cart.html"><i class="fa fa-shopping-cart"></i> Mi carrito</a>
+            <a class="dropdown-item" href="#" onClick="logOut()"><i class="fa fa-power-off"></i> Cerrar sesión</a>
         </div>
     </div>
     `

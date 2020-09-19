@@ -6,6 +6,7 @@
     <meta name="description" content="">
     <title>eMercado - Todo lo que busques está aquí</title>
     
+    <script src="js/mustBeOnServer.js" onload="checkServer()"></script>
     <script src="js/loggedCheck.js" onload=mustBeLogged()></script>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
@@ -27,6 +28,7 @@
         }
       }
     </style>
+    <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/dropzone.css" rel="stylesheet">
@@ -38,7 +40,6 @@
             <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
             <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
             <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-            <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
         </div>
     </nav>
       <div class="container">
@@ -214,12 +215,12 @@
         </div>
       </div>
       <div id="spinner-wrapper"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
+      <script src="js/initAuth.js" async defer></script>
       <script src="js/jquery-3.4.1.min.js"></script>
       <script src="js/bootstrap.bundle.min.js"></script>
       <script src="js/dropzone.js"></script>
       <script src="js/init.js"></script>
       <script src="js/sell.js"></script>
       <script src="https://apis.google.com/js/platform.js?onload=initAuth" async defer></script>
-      <script src="js/initAuth.js" async defer></script>
     </body>
 </html>

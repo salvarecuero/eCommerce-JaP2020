@@ -12,26 +12,26 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/login.css" rel="stylesheet">
-
+  
 </head>
 
 <body class="text-center">
   <div class="container">
+    <div id="login-error"></div>
     <div class="row signin">
       <div class="col-md col-md-offset">
-
-        <div id="login-error"></div>
-
-        <div id="my-signin2" class="mb-4"></div>
-
-        <div class="card">
+        
+        <div id="my-signin2"></div>
+        
+        <div class="card mt-4">
           <div class="card-header">Inicio de sesión</div>
-
+          
           <div class="card-body">
             <form accept-charset="UTF-8" role="form" name="login">
               <div class="form-group">
@@ -42,7 +42,7 @@
               </div>
               
               <small class="font-italic">* Este inicio de sesión únicamente almacenará datos de forma local.</small>
-
+              
               <div class="checkbox mt-2">
                 <label><input name="remember" type="checkbox" value="Recordar datos"> Recordar datos</label>
               </div>
@@ -53,9 +53,10 @@
       </div>
     </div>
   </div>
-
+  
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 </body>
 
 </html>

@@ -8,6 +8,7 @@
   <meta name="description" content="">
   <title>eMercado - Todo lo que busques está aquí</title>
   
+  <script src="js/mustBeOnServer.js" onload="checkServer()"></script>
   <script src="js/loggedCheck.js" onload=mustBeLogged()></script>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
@@ -25,7 +26,6 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
     </div>
   </nav>
 
@@ -57,12 +57,12 @@
       <div></div>
     </div>
   </div>
+  <script src="js/initAuth.js" async defer></script>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
   <script src="https://apis.google.com/js/platform.js?onload=initAuth" async defer></script>
-  <script src="js/initAuth.js" async defer></script>
 </body>
 
 </html>

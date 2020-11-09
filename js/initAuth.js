@@ -9,7 +9,8 @@ function initAuth() {
                 const profile = auth2.currentUser.get().getBasicProfile();
                 if (profile) {
                     localStorage.removeItem("correo");
-                    var img = profile.getImageUrl();
+                    if(localStorage.getItem("userCustomImg")) var img = localStorage.getItem("userCustomImg");
+                    else var img = profile.getImageUrl();
                     var name = profile.getGivenName();
                     var fullName = profile.getName();
                     var email = profile.getEmail();
@@ -20,7 +21,8 @@ function initAuth() {
                     obtainAndShowProductCount();
                 }else if(localStorage.getItem('correo')){
                     var email = localStorage.getItem('correo');
-                    var img = "img/defaultUserImg.svg";
+                    if(localStorage.getItem("userCustomImg")) var img = localStorage.getItem("userCustomImg");
+                    else var img = "img/defaultUserImg.svg";
                     var toAdd = createButton(email, img);
                     const menu = document.getElementById("menu");
                     menu.innerHTML += toAdd;

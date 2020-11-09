@@ -37,7 +37,7 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body onload="initAuth()">
   <nav class="site-header sticky-top py-1 bg-dark">
     <div id="menu" class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="./">Inicio</a>
@@ -51,6 +51,11 @@
       <div class="col-md-4 border-right">
           <div class="d-flex flex-column align-items-center text-center p-3 py-5">
             <div id="user-image"></div>
+
+            <label class="btn btn-sm btn-dark mt-1">
+              <i class="fas fa-camera"></i> Cambiar <input id="change-picture" type="file" accept="image/*" onchange="saveNewProfileImage(event)" hidden>
+            </label>
+
             <div id="user-name" class="font-weight-bold"></div>
             <span class="font-italic" id="user-age"></span>
             <span id="user-email" class="text-black-50"></span>
@@ -106,7 +111,7 @@
   <script src="js/dropzone.js"></script>
   <script src="js/init.js"></script>
   <script src="js/my-profile.js"></script>
-  <script src="https://apis.google.com/js/platform.js?onload=initAuth" async defer></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
 </body>
 
 </html>

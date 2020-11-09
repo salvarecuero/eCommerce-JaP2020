@@ -7,6 +7,7 @@ let myProfileAge;
 
 let userImage;
 
+let changePictureInput;
 let nameInput;
 let birthdayInput;
 let emailInput;
@@ -83,6 +84,18 @@ function setInputs(name, email, birthday, phone){
     emailInput.value = email;
     birthdayInput.value = birthday;
     phoneInput.value = phone;
+}
+
+function saveNewProfileImage(e){
+    let reader = new FileReader();
+
+    reader.onload = function(e) {
+        myProfileImg.firstElementChild.src = e.target.result;
+        document.querySelector("#profilePic").src = e.target.result;
+        localStorage.setItem("userCustomImg", e.target.result);
+    };
+
+    reader.readAsDataURL(e.target.files[0]);
 }
 
 function saveUserData(){

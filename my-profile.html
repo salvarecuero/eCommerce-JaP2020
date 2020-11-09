@@ -47,12 +47,38 @@
     </div>
   </nav>
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+    <div class="row">
+      <div class="col-md-4 border-right">
+          <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+            <div id="user-image"></div>
+            <div id="user-name" class="font-weight-bold"></div>
+            <span class="font-italic" id="user-age"></span>
+            <span id="user-email" class="text-black-50"></span>
+          </div>
+      </div>
+      <div class="col-md-8">
+          <div class="d-flex flex-column align-middle text-center p-3 py-5">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                  <a class="text-secondary" href="/index.html">
+                    <div class="d-flex flex-row align-items-center back">
+                      <i class="fa fa-arrow-left mr-1 mb-2"></i> <h6>Volver a inicio</h6>
+                    </div>
+                  </a>
+                  <h6 class="text-right">Modificar perfil</h6>
+              </div>
+
+              <div class="row mt-2">
+                  <div class="col-md-8"><input id="nameInput" type="text" class="form-control" placeholder="Nombre completo"></div>
+                  <div class="col-md-4"><input id="birthdayInput" type="text" class="form-control" id="birthday" name="birthday" placeholder="F. de nacimiento" min="1920-01-01" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}"></div>
+              </div>
+              <div class="row mt-3">
+                  <div class="col-md-6"><input id="emailInput" type="text" class="form-control" placeholder="Correo electrónico"></div>
+                  <div class="col-md-6"><input id="phoneInput" type="text" class="form-control" placeholder="Número de teléfono"></div>
+              </div>
+              <div class="mt-2 text-right"><button id="saveDataButton" class="btn btn-success profile-button" type="button">Guardar cambios</button></div>
+          </div>
+      </div>
+  </div>
   </div>
   <footer class="text-muted bg-light">
     <div class="container">

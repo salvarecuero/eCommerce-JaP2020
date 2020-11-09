@@ -9,16 +9,22 @@ function initAuth() {
                 const profile = auth2.currentUser.get().getBasicProfile();
                 if (profile) {
                     localStorage.removeItem("correo");
-                    var nombre = profile.getGivenName();
                     var img = profile.getImageUrl();
-                    var toAdd = createButton(nombre, img);
+                    var name = profile.getGivenName();
+                    var fullName = profile.getName();
+                    var email = profile.getEmail();
+                    var toAdd = createButton(name, img);
                     const menu = document.getElementById("menu");
                     menu.innerHTML += toAdd;
+                    if(window.location.pathname === "/my-profile.html") setUserData(img, fullName, email);
                     obtainAndShowProductCount();
                 }else if(localStorage.getItem('correo')){
-                    var toAdd = createButton(localStorage.getItem('correo'), "img/defaultUserImg.svg");
+                    var email = localStorage.getItem('correo');
+                    var img = "img/defaultUserImg.svg";
+                    var toAdd = createButton(email, img);
                     const menu = document.getElementById("menu");
                     menu.innerHTML += toAdd;
+                    if(window.location.pathname === "/my-profile.html") setUserData(img, "", email);
                     obtainAndShowProductCount();
                 }else throw Error();
             })
@@ -30,10 +36,16 @@ function initAuth() {
 };
 
 function createButton(nombre, img){
+    let promiseName;
+    if(localStorage.getItem("userDataObject")) {
+        promiseName = JSON.parse(localStorage.getItem("userDataObject")).name;
+        promiseName != "" && (nombre = promiseName.replace(/ .*/,''));
+    }
+
     let btnMenu = `
     <div id="userMenu" class="dropdown show">
         <a class="btn dropdown-toggle" style="color: white;" href="" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <img id="profilePic" src="${img}" height="25px" style="display: inline-inblock;"> <span id="profileName">${nombre}</span>
+            <img id="profilePic" src="${img}" height="25px" style="display: inline-inblock;"> <span id="profileName">${nombre}</span>
         </a>
             
         <div class="dropdown-menu" style="width: 100%;" aria-labelledby="dropdownMenuLink">

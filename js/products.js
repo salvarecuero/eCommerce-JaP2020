@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("rangeFilterCount").addEventListener("click", setRange);
     document.getElementById("clearRangeFilter").addEventListener("click", cleanFilters);
     
-    productsContainer = document.getElementById("cat-list-container");
+    productsContainer = document.getElementById("prod-list-container");
 
 });
 
@@ -71,24 +71,24 @@ function showProductsList(array = [...productsToManipulate], criteria = currentS
             let product = array[i];
 
             htmlContentToAppend += `
-            <a href="product-info.html" class="list-group-item list-group-item-action">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="` + product.imgSrc + `" class="img-thumbnail">
-                    </div>
-                    <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">`+ product.name +`</h4>
-                            <small class="font-muted">
-                                <b>` + product.currency + " $" + product.cost + `</b><br>
-                                `+ product.soldCount + ` artículos vendidos
-                            </small>
+                <div class="col-md-6 col-lg-3 mb-2 d-flex">
+                    <div class="card rounded shadow border-0">
+                        <div class="card-body pt-4 p-r4 pb-1 pl-4 flex-fill h-100">
+                            <a href="/product-info.html" class="text-dark">
+                                <img src="${product.imgSrc}" class="img-fluid d-block mx-auto mb-3">
+                                <h5>${product.name}</h5>
+                            </a>
+                            <p class="small text-muted font-italic">${product.description}</p>
                         </div>
-                        ${product.description}
+                        <div class="card-body border-top container">
+                            <div class="row d-flex align-middle">
+                                <div class="col-4 px-0 text-center text-success font-weight-bold">$${product.cost}</div>
+                                <div class="col ml-1 pl-4 pr-0 border-left text-muted font-italic">${product.soldCount} vendidos</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </a>
-            `
+            `;
         }
 
         productsContainer.style.transition = "all 200ms";
@@ -153,7 +153,7 @@ function showNHideClearButton(action){
 
 function showErrorMsg(){
     let htmlContentToAppend = `
-        <div class="alert alert-danger mt-2" style="position: relative; width:auto; top: 0;">
+        <div class="alert-danger p-3 my-4 rounded shadow">
             <h3 class="alert-heading">No se han encontrado resultados</h4>
         </div>
     `;
